@@ -97,7 +97,7 @@ export default class EditableCodeTypeWidget extends TypeWidget {
             viewportMargin: Infinity,
             indentUnit: 4,
             matchBrackets: true,
-            keyMap: options.is('vimKeymapEnabled') ? "vim": "default",
+            keyMap: options.is('vimKeymapEnabled') ? "sublime": "default",
             matchTags: {bothTags: true},
             highlightSelectionMatches: {showToken: /\w/, annotateScrollbar: false},
             lint: true,

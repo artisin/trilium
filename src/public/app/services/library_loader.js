@@ -13,7 +13,8 @@ const CODE_MIRROR = {
         "libraries/codemirror/addon/mode/simple.js",
         "libraries/codemirror/addon/search/match-highlighter.js",
         "libraries/codemirror/mode/meta.js",
-        "libraries/codemirror/keymap/vim.js"
+        "libraries/codemirror/keymap/vim.js",
+        "libraries/codemirror/keymap/sublime.js"
     ],
     css: [
         "libraries/codemirror/codemirror.css",
