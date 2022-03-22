@@ -71,6 +71,8 @@ jobs:
             type=sha,enable=true,priority=100,prefix=sha-,suffix=,format=short
             type=raw,value=latest
 
+      - name: Create server-package.json
+        run: cat package.json | grep -v electron > server-package.json
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
