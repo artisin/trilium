@@ -35,8 +35,6 @@ function cloneNoteToNote(noteId, parentNoteId, prefix) {
         isExpanded: 0
     }).save();
 
-    log.info(`Cloned note ${noteId} to new parent note ${parentNoteId} with prefix ${prefix}`);
-
     return {
         success: true,
         branchId: branch.branchId,
@@ -77,7 +75,7 @@ function ensureNoteIsPresentInParent(noteId, parentNoteId, prefix) {
         isExpanded: 0
     }).save();
 
-    log.info(`Ensured note ${noteId} is in parent note ${parentNoteId} with prefix ${prefix}`);
+    log.info(`Creating new branch between child '${noteId}' and parent '${parentNoteId}'`);
 }
 
 function ensureNoteIsAbsentFromParent(noteId, parentNoteId) {
@@ -91,8 +89,6 @@ function ensureNoteIsAbsentFromParent(noteId, parentNoteId) {
 
         const deleteId = utils.randomString(10);
         noteService.deleteBranch(branch, deleteId, new TaskContext());
-
-        log.info(`Ensured note ${noteId} is NOT in parent note ${parentNoteId}`);
     }
 }
 
@@ -131,8 +127,6 @@ function cloneNoteAfter(noteId, afterBranchId) {
         notePosition: afterNote.notePosition + 10,
         isExpanded: 0
     }).save();
-
-    log.info(`Cloned note ${noteId} into parent note ${afterNote.parentNoteId} after note ${afterNote.noteId}, branch ${afterBranchId}`);
 
     return { success: true, branchId: branch.branchId };
 }
